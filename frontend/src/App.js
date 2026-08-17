@@ -41,7 +41,7 @@ export default function App() {
   }
 
   function onRegistered(token, riderData) {
-    localStorage.setItem('ds_token', token);
+    .setItem('ds_token', token);
     setRider(riderData);
     setTab('dashboard');
     showToast('🎉 Welcome to DarkShield! Policy activating...', 'success');
