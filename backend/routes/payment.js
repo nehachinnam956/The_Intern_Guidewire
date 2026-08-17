@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { authMiddleware } = require('./auth');
 
 // ── CREATE ORDER ──────────────────────────────────────────
-router.post('/create-order', authMiddleware, async (req, res) => {
+router.post('/create-order', async (req, res) => {
   const { amount } = req.body;
 
   if (!amount || amount <= 0) {
@@ -50,7 +50,7 @@ router.post('/create-order', authMiddleware, async (req, res) => {
 });
 
 // ── VERIFY PAYMENT ────────────────────────────────────────
-router.post('/verify', authMiddleware, async (req, res) => {
+router.post('/verify', async (req, res) => {
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
 
   // Demo mode
