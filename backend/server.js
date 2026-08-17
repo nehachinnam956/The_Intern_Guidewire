@@ -66,8 +66,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error', detail: err.message });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 DarkShield backend running on port ${PORT}`);
-});
+// Only listen when running locally, not on Vercel
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 DarkShield backend running on port ${PORT}`);
+  });
+}
 
-module.exports = { pool };
+// Export for Vercel serverless
+module.exports = app;
