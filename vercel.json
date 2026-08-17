@@ -1,0 +1,12 @@
+{
+  "services": {
+    "frontend": {
+      "root": "frontend",
+      "framework": "create-react-app"
+    },
+    "backend": {
+      "root": "backend",
+      "framework": "express"
+    }
+  }
+}
