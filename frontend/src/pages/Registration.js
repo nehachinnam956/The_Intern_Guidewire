@@ -118,6 +118,7 @@ export default function Registration({ rider, onRegistered, showToast, setTab })
 
       // Store token
       localStorage.setItem('ds_token', regRes.data.token);
+      await new Promise(r => setTimeout(r, 500));
 
       // Create policy
       await policy.create({
